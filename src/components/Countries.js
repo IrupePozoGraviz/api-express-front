@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const MovieDetails = () => {
+const Countries = () => {
   const [list, setSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch('https://project-express-api-e3l32b2upq-lz.a.run.app/titles')
+    fetch('https://project-express-api-e3l32b2upq-lz.a.run.app/country')
       .then((res) => res.json())
       .then((data) => {
         setSearchResults(data);
@@ -20,18 +20,10 @@ const MovieDetails = () => {
           <p>{item.description}</p>
 
           <h3>{item.country}</h3>
-          <h4>{item.type}</h4>
         </div>
       ))}
     </div>
   );
 };
 
-export default MovieDetails;
-
-/* <BrowserRouter className="Main-container">
-      <Routes>
-        <Route path="/" element={<Movies />} />
-        <Route path="/details/:movieInfo" element={<Details />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="*" element={<Navigate to="/404" replace />} /> */
+export default Countries;
