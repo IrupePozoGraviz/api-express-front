@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// this shows all the movies
 
 const MovieDetails = () => {
   const [list, setSearchResults] = useState([]);
@@ -18,9 +19,8 @@ const MovieDetails = () => {
         <div key={item.id}>
           <h2>{item.title}</h2>
           <p>{item.description}</p>
-
           <h3>{item.country}</h3>
-          <h4>{item.type}</h4>
+
         </div>
       ))}
     </div>

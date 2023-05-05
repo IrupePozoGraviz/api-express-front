@@ -1,15 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../index.css'
 
 export const FirstPage = () => {
   return (
     <div>
       <h1>This is my new starterpage</h1>
-      <div className="buttons">
-        <button type="button"><Link to="/titles">All Titles</Link></button>
-        <button type="button"><Link to="/title">Search for movies</Link></button>
-        <button type="button"><Link to="/nonenglish">Search for countries</Link></button>
+      <div className="navbar">
+        <button type="button">
+          <Link to="/titles">
+            All Movies
+          </Link>
+        </button>
+        <form>
+          <input type="text" name="q" placeholder="Search movie here" />
+          <button type="button"><Link to="/title">Single movie</Link></button>
+        </form>
+        <form>
+          <input type="text" name="q" placeholder="Search country here" />
+          <button type="submit">Search by country</button>
+        </form>
       </div>
     </div>
   );
