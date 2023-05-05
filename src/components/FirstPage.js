@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const FirstPage = () => {
+  const [movie, setMovie] = useState('');
+  const [country, setCountry] = useState('');
   return (
     <div>
       <h1>API express project for technigo bootcamp</h1>
@@ -14,24 +16,30 @@ export const FirstPage = () => {
         </button>
         <form>
           <input
+            value={movie}
+            onChange={(e) => setMovie(e.target.value)}
             type="text"
             name="q"
             placeholder="Search movie here" />
           <button
             type="button">
-            <Link to="/title">
+            <Link to={`/title/${movie}`}>
               Single movie
             </Link>
           </button>
         </form>
         <form>
           <input
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
             type="text"
             name="q"
             placeholder="Search country here" />
           <button
             type="submit">
-            Search by country
+            <Link to={`/country/${country}`}>
+              Search by country
+            </Link>
           </button>
         </form>
       </div>

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Countries = () => {
   const [searchByCountry, setSearchByCountry] = useState([]);
-
+  const { country } = useParams();
   useEffect(() => {
-    fetch('https://project-express-api-e3l32b2upq-lz.a.run.app/country')
+    fetch(`https://project-express-api-e3l32b2upq-lz.a.run.app/country/${country}`)
       .then((res) => res.json())
       .then((data) => {
-        setSearchByCountry(data);
+        setSearchByCountry(data.body.title);
       });
-  }, []);
+  }, [country]);
 
   return (
     <div>
@@ -24,5 +25,4 @@ const Countries = () => {
     </div>
   );
 };
-
-export default Countries;
+export default Countries

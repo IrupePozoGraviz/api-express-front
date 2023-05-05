@@ -13,8 +13,8 @@ export const App = () => {
         <FirstPage />
         <Routes>
           <Route path="/titles" element={<MovieDetails />} />
-          <Route path="/title'" element={<Title />} />
-          <Route path="/country" element={<Country />} />
+          <Route path="/title/:title" element={<Title />} />
+          <Route path="/country/:country" element={<Country />} />
         </Routes>
       </BrowserRouter>
     </div>
